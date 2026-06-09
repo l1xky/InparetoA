@@ -1,0 +1,115 @@
+Channel: https://t.me/inpareto
+Group: https://inparetoGC
+Support: @Developyer
+
+INPARETO — How to use
+Developed by S Crew
+
+========================================
+REQUIREMENTS
+========================================
+
+- Phone or PC with Python 3.10 or newer
+- Internet (Telegram + Supabase sync)
+- Your @BotFather bot token
+- Your Telegram account
+
+Python packages (install once from requirements.txt):
+
+  pip install -r requirements.txt
+
+Termux:
+
+  pkg update && pkg install python
+  pip install -r requirements.txt --break-system-packages
+
+========================================
+FILES IN THIS FOLDER
+========================================
+
+  joint.py           = operator bot (Main)
+  endpoint.py        = local API (Backend)
+  requirements.txt   = Python packages list
+  howtouse.txt       = this guide
+
+Hidden files (created automatically in THIS folder after first run):
+
+  .inpareto_telegram      your linked Telegram id
+  .inpareto_license       redeemed license (encrypted)
+  .inpareto_device        device id for cloud
+  .inpareto_hit_group     linked hit group id
+  .inpareto_hit_group_owner
+
+They are NOT on GitHub (private to your phone). If you do not see them,
+make sure you run:  cd /path/to/this/folder  then  python joint.py
+Do not copy joint.py somewhere else without these files — link again.
+
+========================================
+STEP 1 — INSTALL
+========================================
+
+Open Termux (or terminal), go to this folder, run:
+
+  pip install -r requirements.txt
+
+========================================
+STEP 2 — RUN (2 TERMINALS)
+========================================
+
+You need BOTH running at the same time.
+
+Terminal 1:
+  python joint.py
+
+Terminal 2:
+  python endpoint.py
+
+Start joint.py first, then endpoint.py.
+
+========================================
+STEP 3 — TELEGRAM SETUP
+========================================
+
+1. Paste your bot token when asked.
+2. Join required channels and tap Verify until access opens.
+3. Create a hit group, add your bot, make it ADMIN
+   (Post messages + Change group info).
+4. Send:  /verifyhitgroup
+   If bot privacy is ON in BotFather, use:
+   /verifyhitgroup@YourBotUsername
+5. Hits go to your group, not your private chat with the bot.
+
+========================================
+USEFUL COMMANDS
+========================================
+
+  /start          welcome panel
+  /stats          live dashboard
+  /settings       min followers, timeout, threads
+  /hits           recent captures
+  /saved          favourites + favorites.txt file
+  /profile        your stats and badges
+  /pause          stop hunting
+  /resume         start again
+  /hitgroup       hit group status
+  /verifyhitgroup confirm bot admin in group
+  /help           full command list
+
+On a hit alert: tap "Add to fav" — bot will ask in DM if you want a note.
+
+========================================
+PROBLEMS?
+========================================
+
+"Hit group required" but hits already in group
+  -> Send /verifyhitgroup again
+
+Bot ignores commands in the group
+  -> Turn off Group Privacy in @BotFather
+     or use @YourBot in the command
+
+API / lookup errors
+  -> Make sure endpoint.py is still running
+
+Same account on another phone/PC
+  -> Same bot token + verify hit group once per device
